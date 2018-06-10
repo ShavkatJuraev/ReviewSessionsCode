@@ -52,12 +52,15 @@ public class ReqresApi {
 		assertEquals(4, json.getInt("total_pages"));
 		
 		assertEquals(4, json.getInt("data.id[0]"));
+		
 		//verify that Charles's id is 5
 		assertEquals(5, json.getInt("data.find{it.first_name == 'Charles'}.id"));
-
-
-
 		
+		//check person id 6, first name is Tracey
+		//and lastname is Ramos
+		
+		assertEquals("Ramos", json.getString("data.find{it.id==6}.last_name"));
+		assertEquals("Tracey", json.getString("data.find{it.id==6}.first_name"));
 		
 		
 		
