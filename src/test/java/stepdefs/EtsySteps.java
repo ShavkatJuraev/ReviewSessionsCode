@@ -2,6 +2,7 @@ package stepdefs;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,10 +12,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
+import pages.EtsyPage;
 
 public class EtsySteps {
 	
 	private WebDriver driver;
+	private EtsyPage etsy;
+	private String keyword;
 	
 	@Given("User is on Etsy homepage")
 	public void user_is_on_Etsy_homepage() {
@@ -27,12 +31,16 @@ public class EtsySteps {
 	}
 
 	@When("User searches for {string}")
-	public void user_searches_for(String string) {
+	public void user_searches_for(String keyword) {
+		this.keyword=keyword;
+		etsy = new EtsyPage(driver);
+		etsy.searchBox.sendKeys(keyword + Keys.ENTER);
 	   
 	}
 
 	@Then("Search results should be displayed")
 	public void search_results_should_be_displayed() {
+		Assert.assertTrue(driver.getTitle().toLowerCase().startsWith(keyword));
 	    
 	}
 
