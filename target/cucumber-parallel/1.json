@@ -1,0 +1,65 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Etsy search for an item",
+        "description": "",
+        "id": "etsy-product-search;etsy-search-for-an-item",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 27597147820,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is on Etsy homepage",
+            "match": {
+              "location": "EtsySteps.user_is_on_Etsy_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16476530500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User searches for \"wooden spoon\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"wooden spoon\"",
+                  "offset": 18
+                }
+              ],
+              "location": "EtsySteps.user_searches_for(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 310969641,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Search results should be displayed",
+            "match": {
+              "location": "EtsySteps.search_results_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Etsy product search",
+    "description": "",
+    "id": "etsy-product-search",
+    "keyword": "Feature",
+    "uri": "C:/Users/shava/eclipse-workspace/ReviewSessionsCode/src/test/resources/features/EtsySearch1.feature",
+    "tags": []
+  }
+]
